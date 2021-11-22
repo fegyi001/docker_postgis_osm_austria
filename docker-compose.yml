@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  postgis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        POSTGRES_VERSION: ${POSTGRES_VERSION}
+        POSTGIS_VERSION: ${POSTGIS_VERSION}
+        TIMEZONE: ${TIMEZONE}
+    image: db
+    volumes:
+      - postgis:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    environment:
+      # postgres user
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - DB_NAME=osm_rails_austria
+  
+volumes:
+  postgis:
