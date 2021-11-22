@@ -1,4 +1,4 @@
-# osm_rails_austria
+# docker_postgis_osm_austria
 
 ## step1
 ```bash
@@ -7,7 +7,7 @@ docker-compose build && docker-compose up -d
 
 ## step2
 ```bash
-docker exec -it osm_rails_austria_1 bash
+docker exec -it docker_postgis_osm_austria_1 bash
 ```
 
 ## step3
